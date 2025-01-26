@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic Analysis - Brute Packet</title>
+    <div class="dashboard-section">
+        <h2>Live Network Map</h2>
+        <div class="mermaid-container" id="networkTopology">
+          <!-- Mermaid will render here -->
+        </div>
+        <div class="stratoshark-view" id="packetInspector">
+          <!-- Stratoshark packet details -->
+        </div>
+      </div>
+      
+      <script>
+        // Real-time updates
+        setInterval(() => {
+          fetch('/network-topology')
+            .then(res => res.json())
+            .then(data => {
+              const topologyCode = `graph TD\n${data.nodes.map(n => `${n.id}[${n.name}]:::${n.type}`).join('\n')}\n${data.connections.join('\n')}`;
+              mermaid.render('networkTopology', topologyCode);
+            });
+        }, 3000);
+      </script>
     <style>
         /* Inherited Global Styles */
         /* ... Paste all styles from index.html here ... */
@@ -79,6 +100,16 @@
             <table>
                 <!-- Table content -->
             </table>
+        </div>
+        <div class="advanced-metrics">
+            <div class="chart-container">
+                <h2>Network Sessions</h2>
+                <canvas id="sessionChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Retransmissions</h2>
+                <canvas id="retransmissionChart"></canvas>
+            </div>
         </div>
 
         <div class="footer">

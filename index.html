@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/sidebar.css">
         <link rel="stylesheet" href="assets/css/stats.css">
+        <!-- Mermaid.js -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+<!-- Stratoshark integration -->
+<script src="https://cdn.jsdelivr.net/npm/stratoshark-web@1.2.0/dist/stratoshark.min.js"></script>
+
+<!-- Falco WebSocket -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
 
     <title>Brute Packet - Dashboard</title>
     <style>
@@ -150,12 +158,22 @@
                 <p id="totalPackets">0</p>
             </div>
             <div class="card">
-                <h3>Active Devices</h3>
+                <h3>Network Devices</h3>
                 <p id="activeDevices">0</p>
             </div>
             <div class="card">
-                <h3>Threats Detected</h3>
+                <h3>Packets Analysis</h3>
                 <p id="threatsDetected">0</p>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-container">
+                <h2>Protocol Distribution</h2>
+                <canvas id="protocolChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Packet Sizes</h2>
+                <canvas id="packetSizeChart"></canvas>
             </div>
         </div>
 
