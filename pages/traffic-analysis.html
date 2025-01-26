@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Analysis - Brute Packet</title>
+    <style>
+        /* Inherited Global Styles */
+        /* ... Paste all styles from index.html here ... */
+
+        /* Page-specific Styles */
+        .protocol-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .protocol-card {
+            background: #2a2a3c;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .data-table {
+            background: #1e1e2f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #3a3a4c;
+        }
+
+        th {
+            background-color: #2a2a3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same sidebar as index.html -->
+    <div class="sidebar">
+        <h1>Brute Packet</h1>
+        <h3>Network Security Framework</h3>
+        <a href="../index.html">Dashboard</a>
+        <a href="traffic-analysis.html">Traffic Analysis</a>
+        <a href="threat-detection.html">Threat Detection</a>
+        <a href="device-management.html">Device Management</a>
+        <a href="settings.html">Settings</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Traffic Analysis</h1>
+        </div>
+
+        <div class="protocol-breakdown">
+            <div class="protocol-card">
+                <h4>TCP Traffic</h4>
+                <p>1.2 GB</p>
+            </div>
+            <div class="protocol-card">
+                <h4>UDP Traffic</h4>
+                <p>450 MB</p>
+            </div>
+        </div>
+
+        <div class="data-table">
+            <h3>Recent Network Activity</h3>
+            <table>
+                <!-- Table content -->
+            </table>
+        </div>
+
+        <div class="footer">
+            <!-- Same footer as index.html -->
+        </div>
+    </div>
+</body>
+</html>
